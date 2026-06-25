@@ -56,6 +56,20 @@ patdown — 1 changed file
 
 Same code. The vulns don't make it out the door.
 
+## Real runs
+
+Not a mockup. These are **actual patdown runs in Claude Code** on planted-vuln code:
+
+- **Case 1 — payments:** caught a hardcoded Stripe *live* key (critical), an SSRF,
+  and a SQL injection — and noticed the key was *already in git history*, so it
+  told you to rotate it, not just move it.
+- **Case 2 — auth helpers:** four classes in eight lines — path traversal, a
+  `Math.random()` reset token, an IDOR (looks like a normal DB call), and an MD5
+  password hash. A secret-scanner catches none of these.
+
+Full diffs + verbatim reports in **[CASES.md](CASES.md)**. Reproduce: install the
+skill, make the change, run `/patdown`.
+
 ## Install
 
 ```bash
