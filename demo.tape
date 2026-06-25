@@ -4,7 +4,7 @@ Output demo.gif
 Set Shell "bash"
 Set FontSize 19
 Set Width 960
-Set Height 600
+Set Height 680
 Set Padding 26
 Set Theme "Dracula"
 Set TypingSpeed 35ms
@@ -17,4 +17,4 @@ Type "node examples/demo.mjs"
 Sleep 400ms
 Enter
 
-Sleep 9s
+Sleep 11s
