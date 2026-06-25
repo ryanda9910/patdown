@@ -126,6 +126,17 @@ Claude Code (native skill), and any agent that loads a rules/skill file —
 **Codex, Cursor, Gemini CLI, opencode, Aider, GitHub Copilot CLI**, and friends.
 The installer drops the skill into each one it finds.
 
+## Documentation
+
+Full docs in **[docs/](docs/)**:
+
+- **[Usage](docs/usage.md)** — triggering, `/patdown`, report format, the hard rule
+- **[Checklist reference](docs/checklist.md)** — every category, examples, severity model
+- **[Install](docs/install.md)** — every agent, global vs project, manual, uninstall
+- **[Customizing](docs/customizing.md)** — edit checks, severity gate, scope, languages
+- **[FAQ](docs/faq.md)** — vs SAST/linters/CI, speed, privacy, languages
+- **[Real runs](CASES.md)** · **[Contributing](CONTRIBUTING.md)** · **[Security](SECURITY.md)**
+
 ## Why a skill, not a CI scanner
 
 CI catches it after you pushed. A linter pattern-matches and misses logic bugs
