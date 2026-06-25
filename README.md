@@ -7,6 +7,10 @@
 <p align="center"><b>Frisk your diff before it ships.</b></p>
 
 <p align="center">
+  🇺🇸 English · <a href="README.id.md">🇮🇩 Bahasa Indonesia</a> · <a href="README.zh-CN.md">🇨🇳 简体中文</a>
+</p>
+
+<p align="center">
   <img alt="license" src="https://img.shields.io/badge/license-MIT-34D399" />
   <img alt="skill" src="https://img.shields.io/badge/Claude%20Code-skill-34D399" />
   <img alt="harness" src="https://img.shields.io/badge/also-Codex%20·%20Cursor%20·%20Gemini%20·%20opencode-blue" />
@@ -55,7 +59,11 @@ Same code. The vulns don't make it out the door.
 ## Install
 
 ```bash
+# macOS / Linux / WSL
 curl -fsSL https://raw.githubusercontent.com/ryanda9910/patdown/main/install.sh | bash
+
+# Windows (PowerShell)
+irm https://raw.githubusercontent.com/ryanda9910/patdown/main/install.ps1 | iex
 ```
 
 Finds every coding agent you have and installs the skill into each. ~10 seconds,
