@@ -25,6 +25,25 @@ welcome.
 - Preserve the contract: audit the **diff only**, fix safe/mechanical, escalate
   intent, refuse "done" on unaddressed critical/high.
 
+## Commits
+
+This repo uses [Conventional Commits](https://www.conventionalcommits.org).
+Format: `<type>(<scope>)?: <subject>` — types: `feat`, `fix`, `docs`, `style`,
+`refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`.
+
+```
+feat(skill): add a new check
+docs: clarify the install steps
+fix: handle empty diff
+```
+
+CI lints every PR's commits (`.github/workflows/commitlint.yml`). To catch issues
+before you push, enable the dep-free local hook once:
+
+```bash
+git config core.hooksPath .githooks
+```
+
 ## Testing a change
 
 Plant a vulnerable diff, install your edited skill (`bash install.sh --project`
