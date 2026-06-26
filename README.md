@@ -98,6 +98,7 @@ directory (Claude Code: `~/.claude/skills/patdown/SKILL.md`).
 │  PATHS          traversal · zip-slip · symlink follow       │
 │  CRYPTO         weak rng/hash · disabled tls · == on tokens │
 │  DOS            unbounded input · no timeouts · redos        │
+│  LLM/AI-APP     prompt injection · model output → eval/sql    │
 └──────────────────────────────────────────────────────────┘
 ```
 

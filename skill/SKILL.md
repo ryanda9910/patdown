@@ -52,9 +52,18 @@ files you just edited). Do not re-audit the whole repo; stay scoped and fast.
    credentials), missing CSRF protection on state-changing routes.
 8. **Resource & DoS** — unbounded input (no size/row caps), unbounded loops over
    user data, missing timeouts on outbound calls, regex on attacker input.
+9. **LLM / AI-app security** (the code uses an LLM) — **prompt injection**:
+   untrusted input (user text, web/tool output) concatenated into a prompt or
+   system message with no isolation, letting it override instructions; **trusting
+   model output**: feeding it straight into `eval`/SQL/a shell command/a redirect
+   without validation; **over-broad tools**: handing the model shell/file-write/DB
+   tools with no allow-list or approval gate; **secrets in prompts**: keys or
+   system internals placed where the model or logs can leak them; no output/token
+   or loop bound on the model call.
 
-Severity: **critical** (secret leak, RCE, auth bypass), **high** (injection,
-SSRF, IDOR), **medium** (weak crypto, missing validation), **low** (hardening).
+Severity: **critical** (secret leak, RCE, auth bypass, model output → `eval`/shell),
+**high** (injection, SSRF, IDOR, prompt injection), **medium** (weak crypto,
+missing validation), **low** (hardening).
 
 ## What to do with findings
 

@@ -2,6 +2,15 @@
 
 All notable changes to patdown are documented here.
 
+## [0.2.0] — 2026-06-26
+
+### Added
+- **LLM / AI-app security checks.** patdown now frisks AI features your agent
+  writes for **prompt injection** (untrusted input merged into prompts), **trusting
+  model output** (LLM output fed into `eval`/SQL/shell without validation),
+  **over-broad tools** exposed to the model, **secrets in prompts**, and missing
+  output/loop bounds. Covers `skill/SKILL.md`, `docs/checklist.md`, and the README.
+
 ## [0.1.0] — 2026-06-25
 
 First release.

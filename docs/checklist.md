@@ -95,6 +95,30 @@ timeouts on outbound calls, regex on attacker input.
 
 **Fix:** add caps, timeouts, and pagination.
 
+## 9. LLM / AI-app security
+
+For code that calls an LLM (agents, chatbots, RAG, AI features). The agent is now
+writing AI apps, so it has to frisk those too.
+
+```js
+const prompt = `You are support. Answer this: ${userMessage}`;  // ⚠ high — prompt injection
+const sql = await llm.complete("write SQL for: " + q);
+db.query(sql);                                                  // ✗ critical — model output → SQL
+```
+**Catches:**
+- **Prompt injection** — untrusted input (user text, web/tool output) concatenated
+  into a prompt/system message with no isolation, able to override instructions.
+- **Trusting model output** — LLM output fed straight into `eval`/SQL/shell/a
+  redirect without validation.
+- **Over-broad tools** — shell/file-write/DB tools exposed to the model with no
+  allow-list or approval gate.
+- **Secrets in prompts** — keys or system internals where the model or logs leak them.
+- **No bound** — missing output/token cap or loop guard on the model call.
+
+**Fix:** isolate untrusted input from instructions, validate/encode model output
+before acting on it, gate dangerous tools behind an allow-list/approval, keep
+secrets out of prompts, and bound the call.
+
 ---
 
 patdown reports **real findings only**. If a changed line is fine, it is not
