@@ -70,6 +70,15 @@ Not a mockup. These are **actual patdown runs in Claude Code** on planted-vuln c
 Full diffs + verbatim reports in **[CASES.md](CASES.md)**. Reproduce: install the
 skill, make the change, run `/patdown`.
 
+**Exploit case study** — the same three real attacks fired at a tiny API before
+and after patdown's fixes: **3/3 exploited → 0/3**. Real `node:sqlite` injection,
+a real SSRF to an internal service, a real leaked key. Runnable e2e + video in
+**[examples/exploit-case-study](examples/exploit-case-study)**.
+
+<p align="center">
+  <img src="assets/exploit-case-study.png" alt="Same 3 attacks before vs after patdown: before 3/3 exploited, after 0/3" width="820" />
+</p>
+
 ## Install
 
 ```bash
